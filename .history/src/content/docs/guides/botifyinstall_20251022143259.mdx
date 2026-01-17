@@ -1,0 +1,68 @@
+---
+title: Botify installation
+description: A guide in my new Starlight docs site.
+---
+
+import { Steps } from "@astrojs/starlight/components";
+import { Badge } from "@astrojs/starlight/components";
+
+### Upload the Project Files
+
+<Steps>
+
+1. Upload the Project Files
+   First, upload the botify.zip file to your VPS using FTP, SCP, or your preferred file transfer method
+
+   ```js
+   scp botify.zip root@your-server-ip:/var/www/
+
+   ```
+
+2. Unzip the Project
+   Once uploaded
+
+   ```
+   cd /var/www/
+   sudo unzip botify.zip -d botify
+
+   ```
+
+3. Navigate to the Project Directory
+
+   ```
+   cd /var/www/botify
+   ```
+
+4. Start the Application Using Docker
+
+   ```
+   sudo docker compose build up -d
+
+   ```
+
+5. Verify Containers are Running
+
+   ```
+   sudo docker ps
+
+   ```
+
+   You should see containers for:
+
+   - botify-web (Next.js app)
+
+   - redis
+
+   - postgres
+
+6. Access the Application
+
+   ```
+   http://yourdomain.com
+
+   ```
+
+   {" "}
+   <Badge text="Success" variant="success" />
+
+</Steps>

@@ -1,0 +1,71 @@
+---
+title: Server configuration
+description: A guide in my new Starlight docs site.
+---
+
+import { Steps } from "@astrojs/starlight/components";
+
+### Installation Steps
+
+<Steps>
+
+1. Update Your Server
+
+   ```js
+   sudo apt update && sudo apt upgrade -y
+   ```
+
+2. Install Node.js & npm
+   ```js
+   curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+   sudo apt install -y nodejs
+   node -v
+   npm -v
+   ```
+3. Install Docker & Docker Compose
+
+   ```js
+   sudo apt install -y apt-transport-https ca-certificates curl software-properties-common
+   curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+   echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+   sudo apt update
+   sudo apt install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
+   docker --version
+   docker compose version
+   ```
+
+4. Start Docker
+
+   ```js
+   sudo systemctl enable docker
+   sudo systemctl start docker
+
+   ```
+
+5. Setup Nginx as Reverse Proxy
+
+   ```js
+   sudo apt install nginx -y
+   sudo nano /etc/nginx/sites-available/whatsapp.conf
+
+   ```
+
+6. Add the following configuration
+
+   ```js
+   server {
+    server_name yourdomain.com;
+
+    location / {
+        proxy_pass http://localhost:3000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+   }
+
+   ```
+
+   </Steps>

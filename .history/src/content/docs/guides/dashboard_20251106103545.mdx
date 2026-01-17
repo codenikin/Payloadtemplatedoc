@@ -1,0 +1,42 @@
+---
+title: Bulk whatsapp sending dashboard
+---
+
+1. Login Page
+
+After creating your admin account during onboarding, go to the Login Page and sign in using your credentials.
+
+Once logged in successfully, you will be redirected to your Dashboard, where you can manage WhatsApp campaigns, view message statistics, and access all available system features.
+
+<div id="image-container-login">
+  <img
+    src="/login.png"
+    alt="Onboarding"
+    style="cursor: pointer; max-width: 100%;"
+    class="zoomable-image"
+    data-image="/login.png"
+  />
+</div>
+
+<script define:vars={{}} type="text/javascript">
+  {`
+  document.querySelectorAll('.zoomable-image').forEach(img => {
+    img.addEventListener('click', function() {
+      const modal = document.createElement('div');
+      modal.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);display:flex;align-items:center;justify-content:center;z-index:9999;cursor:pointer;';
+      
+      const zoomedImg = document.createElement('img');
+      zoomedImg.src = this.dataset.image;
+      zoomedImg.style.cssText = 'max-width:90vw;max-height:90vh;object-fit:contain;';
+      
+      modal.appendChild(zoomedImg);
+      modal.addEventListener('click', () => modal.remove());
+      document.body.appendChild(modal);
+    });
+  });
+`}
+  2. 2. Add Your First Device After logging in, navigate to the Devices section from
+  the dashboard menu. Click “Add Device”, then enter your mobile number (the one
+  with WhatsApp installed). Once submitted, the system will create and link your
+  device.
+</script>

@@ -1,0 +1,17 @@
+---
+const { base = "" } = Astro.site
+  ? { base: import.meta.env.BASE_URL }
+  : { base: "" };
+---
+
+<html>
+  <header class="site-header"></header>
+
+  <body>
+    <main>
+      <slot />
+    </main>
+  </body>
+
+
+</html>

@@ -1,0 +1,53 @@
+---
+title: Redis installation on VPS
+description: How to istall and run Redis in  VPS.
+---
+
+import { Steps } from "@astrojs/starlight/components";
+import { Badge } from "@astrojs/starlight/components";
+
+### Redis installation
+
+<Steps>
+
+1.  Install Redis with the following commands:
+
+        ```js
+        sudo apt update && sudo apt install redis-server -y
+
+
+        ```
+
+2.  Edit the Redis config file:
+
+            ```
+            sudo nano /etc/redis/redis.conf
+
+            ```
+
+3.  Make sure:
+
+                ```
+                # Only listen to localhost (safe without password)
+                 bind 127.0.0.1 ::1
+                ```
+
+4.  Restart Redis
+
+                     ```
+                     sudo systemctl restart redis-server
+                     sudo systemctl enable redis-server
+                     sudo systemctl status redis-server
+
+                     ```
+
+5.  Example .env
+
+                         ```
+                         REDIS_HOST=localhost
+                         REDIS_PORT=6379
+
+
+                         ```
+
+</Steps>

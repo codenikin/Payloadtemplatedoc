@@ -1,0 +1,68 @@
+---
+title: Payload CMS Templates Advantages
+description: Our Bulk WhatsApp Sender is engineered for performance. Using Next.js, TypeScript, and Redis Queue, it delivers thousands of WhatsApp messages with unmatched reliability and speed — all in real time.
+---
+
+import { Badge } from "@astrojs/starlight/components";
+
+Codenik Design is a digital agency specializing in modern website development using Payload CMS. We create fast, scalable, and SEO-friendly digital portfolio websites with clean UI/UX and easy content management.
+
+### Main Features
+
+- SEO-Friendly Structure
+  All templates are fully SEO optimized with proper meta tags, metadata, and integrated structured schema markup to improve search engine visibility.
+- High Performance & Speed
+  Designed for maximum performance, our templates achieve a 100% page load speed score, ensuring fast and smooth user experiences.
+- Dockerized Version Available
+  A fully dockerized setup is provided for easy deployment, consistency across environments, and simplified development workflows.
+- Clean & Maintainable Code
+  Written with neat, well-structured, and readable code that follows best practices and contains no errors.
+- Integrated & Ready-to-Use Templates
+  Pre-integrated layouts and components allow for quick setup and easy customization, saving development time
+
+### Advantages of the Payload
+
+<div style="line-height: 2.5;">
+  <Badge text="High Performance & Fast Loading" size="large" />
+</div>
+
+- Payload CMS is built with a modern, headless architecture that delivers exceptional performance. Websites load extremely fast and can achieve Google Lighthouse scores close to 100%, ensuring a smooth and responsive user experience
+
+  <img
+    src="/lighthouse.png"
+    alt="Contact Upload Interface"
+    width="100%"
+    style="cursor: pointer; max-width: 100%;"
+    class="zoomable-image"
+  />
+  <Badge text="Developer-Friendly Architecture" size="large" />
+
+- Payload CMS is built with developers in mind, offering full control over the backend while maintaining a strong admin UI.
+
+  <img
+    src="/autoreply.png"
+    alt="Contact Upload Interface"
+    width="100%"
+    style="margin: 2rem 0; border-radius: 8px;"
+  />
+
+  <Badge text="Secure & Reliable" size="large" />
+
+- Includes modern authentication, access control, and security best practices to protect your data.
+
+<script define:vars={{}} type="text/javascript">
+  {`
+  document.querySelectorAll('.zoomable-image').forEach(img => {
+    img.addEventListener('click', function() {
+      const modal = document.createElement('div');
+      modal.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);display:flex;align-items:center;justify-content:center;z-index:9999;cursor:pointer;';
+      const zoomedImg = document.createElement('img');
+      zoomedImg.src = this.dataset.image;
+      zoomedImg.style.cssText = 'max-width:90vw;max-height:90vh;object-fit:contain;';
+      modal.appendChild(zoomedImg);
+      modal.addEventListener('click', () => modal.remove());
+      document.body.appendChild(modal);
+    });
+  });
+`}
+</script>
